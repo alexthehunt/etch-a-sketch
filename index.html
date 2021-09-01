@@ -16,13 +16,12 @@
 
         <div class="flexbox-container">
             <div class="button-container">
-                <div><button class="button" id="clear-grid" onclick="clearGrid()">Reset</button></div>
-                <div><button class="button" id="psychadelic" onclick="psychadelic()">Psychadelic mode</button></div>
+                <div><button class="button" id="psychadelic" onclick="psychadelic()">Color mode</button></div>
                 <div><button class="button" id="normal-mode" onclick="normalMode()">Normal Mode</button></div>
-                <div id="grid-size">
-                    Change grid size
-                    <div><form><input type="text" method = "post" id="grid-size-input" placeholder="Enter a number from 1 to 100.."></form></div>
-                    <div><button class="button" id="submit">Submit</button></div>
+                <div><button class="button" id="clear-grid" onclick="clearGrid()">Reset</button></div>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p id="grid-size-text">Grid size: <span id="demo"></span></p>
                 </div>
             </div>
 

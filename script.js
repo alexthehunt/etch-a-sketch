@@ -5,53 +5,55 @@ const sketchGrid = document.querySelector('.grid-container');
 // create divs and append to sketchGrid
 
 
-function gridBuilder () {
+function gridBuilder() {
 
     for (let i = 0; i < (16 * 16); i++) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'grid-item';
-        
+
 
         sketchGrid.append(gridDiv);
 
         gridDiv.addEventListener(
             "mouseover", function () {
-                  
-        gridDiv.style.background 
-            = "black";
+
+                gridDiv.style.background
+                    = "black";
             })
     }
 };
 
 gridBuilder();
 
+
 // reset grid color and show popup
 
-function clearGrid () {
+function clearGrid() {
 
     const elements = document.getElementsByClassName("grid-item");
 
     for (let i = 0; i < elements.length; i++) {
-    elements[i].style.background = "white"
+        elements[i].style.background = "white"
     }
 
 };
+
 
 // Functions to randomize grid-item color on mouse hover
 
 function random_rgba() {
     const o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    return 'rgba(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ',' + r().toFixed(1) + ')';
 }
 
-function psychadelic () {
+function psychadelic() {
 
     const psychBackground = document.getElementById("full-page");
 
     const elem = document.getElementsByClassName("grid-item");
 
-    
-    while(elem[0]) {
+
+    while (elem[0]) {
 
         elem[0].parentNode.removeChild(elem[0])
 
@@ -60,15 +62,18 @@ function psychadelic () {
     for (let i = 0; i < (16 * 16); i++) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'grid-item';
-        
+
 
         sketchGrid.append(gridDiv);
 
         gridDiv.addEventListener(
             "mouseover", function () {
-                  
-        gridDiv.style.background 
-            = random_rgba();
+
+                gridDiv.style.background
+                    = random_rgba();
+
+                gridDiv.style.opacity = 1;
+
             })
     }
 
@@ -77,15 +82,16 @@ function psychadelic () {
 
 };
 
+
 // reset draw color to black
 
-function normalMode () {
+function normalMode() {
 
     const psychBackground = document.getElementById("full-page");
-    
+
     const elem = document.getElementsByClassName("grid-item");
-    
-    while(elem[0]) {
+
+    while (elem[0]) {
 
         elem[0].parentNode.removeChild(elem[0])
 
@@ -94,15 +100,15 @@ function normalMode () {
     for (let i = 0; i < (16 * 16); i++) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'grid-item';
-        
+
 
         sketchGrid.append(gridDiv);
 
         gridDiv.addEventListener(
             "mouseover", function () {
-                  
-        gridDiv.style.background 
-            = "black";
+
+                gridDiv.style.background
+                    = "black";
             })
     }
 
@@ -110,31 +116,36 @@ function normalMode () {
 
 };
 
+
 // change grid size
 
-function gridSize (input) {
+// Update the current slider value (each time you drag the slider handle)
+const slider = document.getElementById("myRange");
+const output = document.getElementById("demo");
+output.innerHTML = slider.value; // Display the default slider value
 
-    const elem = document.getElementsByClassName("grid-item");
 
-    
-    while(elem[0]) {
+function gridSize() {
 
-        elem[0].parentNode.removeChild(elem[0])
+    const rows = output.innerHTML
+    const columns = rows.innerHTML
 
-        };
-
-    for (let i = 0; i < (input); i++) {
+    for (let i = 0; i < (rows * columns); i++) {
         const gridDiv = document.createElement('div');
         gridDiv.className = 'grid-item';
-        
+
 
         sketchGrid.append(gridDiv);
 
         gridDiv.addEventListener(
             "mouseover", function () {
-                    
-        gridDiv.style.background 
-            = "black";
+
+                gridDiv.style.background
+                    = "black";
             })
     }
 };
+
+
+
+
