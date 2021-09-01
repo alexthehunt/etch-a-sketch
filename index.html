@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html id="full-page">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Etch-A-Sketch</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="flexbox-container">
+            <div class="button-container">
+                <div><button class="button" id="clear-grid" onclick="clearGrid()">Reset</button></div>
+                <div><button class="button" id="psychadelic" onclick="psychadelic()">Psychadelic mode</button></div>
+                <div><button class="button" id="normal-mode" onclick="normalMode()">Normal Mode</button></div>
+                <div id="grid-size">
+                    Change grid size
+                    <div><form><input type="text" method = "post" id="grid-size-input" placeholder="Enter a number from 1 to 100.."></form></div>
+                    <div><button class="button" id="submit">Submit</button></div>
+                </div>
+            </div>
+
+            <div class="column-container">    
+                <h1 class="page-header" id="header">Etch-A-Sketcher</h1>
+                <div class="grid-container">
+
+                </div>
+                <footer class="footer">
+                    Copyright &#169; 2021 alexthehunt
+                    <a href="https://github.com/alexthehunt/etch-a-sketch" target="_blank">
+                        <img src="images/GitHub-Mark-120px-plus.png" alt="github logo" id="github-logo">
+                    </a>
+                    </footer>
+            </div>
+
+
+                <!--[if lt IE 7]>
+                    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+                <![endif]-->
+        </div>
+       
+
+        <script src="script.js" async defer></script>
+    </body>
+</html>
